@@ -31,15 +31,18 @@ lum = pow(10,6.5-1.25*log10(res)); // Calc. lumnos.
 Serial.print ("\n\n----------");
 Serial.print("\nLuminosidade [Lux]: ");
 Serial.print(lum); // Exibe luminosidade
+Serial.print (" LUX");
   //DHT22
 umid = dht.readHumidity(); // Lê umidade
 umid = 1.00*umid + 0.00; // Calibração
 Serial.print("\n\nUmidade [%]: ");
 Serial.print(umid); // Exibe umidade
+Serial.print (" %");
   //BMP180
 press = bmp.readPressure(); // Lê pressão
 Serial.print("\n\nPressão [hPa]: ");
 Serial.print(press/100); // Exibe pressão
+Serial.print (" mhPa");
   //LM35
 bin = analogRead(A2); // Lê valor binário
 tensao = (bin/1023.0)*1.1; // Converte em tensão
@@ -50,6 +53,7 @@ temp = 100.00*tensao+0.00; // Converte em temp.
 //Serial.print(tensao); // Exibe tensão
 Serial.print("\n\nTemperatura [ºC]: ");
 Serial.print(temp); // Exibe temperatura
+Serial.print (" ºC");
 
 delay(3000);
 }
